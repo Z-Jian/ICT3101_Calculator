@@ -9,7 +9,7 @@ Link to a feature: [Calculator]($projectname$/Features/Calculator.feature)
 Scenario: Add two numbers
 	Given I have a calculator
 	When I have entered 50 and 70 into the calculator and press add
-	Then the result should be 12
+	Then the result should be 120
 	
 # Scenario Outlines
 @Addition
