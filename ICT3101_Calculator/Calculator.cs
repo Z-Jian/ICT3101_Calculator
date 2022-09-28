@@ -1,4 +1,6 @@
-﻿public class Calculator
+﻿using ICT3101_Calculator;
+
+public class Calculator
 {
     public Calculator() { }
     public double DoOperation(double num1, double num2, string op)
@@ -178,6 +180,22 @@
         {
             throw new ArgumentException("Value cannot be lesser or equals 0");
         }
+    }
+
+    public double GenMagicNum(double input, IFileReader fileReader)
+    {
+        double result = 0;
+        int choice = Convert.ToInt16(input);
+        //Dependency------------------------------
+        FileReader getTheMagic = new FileReader();
+        //----------------------------------------
+        string[] magicStrings = getTheMagic.Read("./../../../MagicNumbers.txt");
+        if ((choice >= 0) && (choice < magicStrings.Length))
+        {
+            result = Convert.ToDouble(magicStrings[choice]);
+        }
+        result = (result > 0) ? (2 * result) : (-2 * result);
+        return result;
     }
 
 }

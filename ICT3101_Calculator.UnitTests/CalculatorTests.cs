@@ -1,3 +1,4 @@
+using ICT3101_Calculator;
 using NUnit.Framework;
 using System;
 
@@ -6,11 +7,13 @@ namespace ICT3101_Caculator.UnitTests
     public class CalculatorTests
     {
         private Calculator _calculator;
+        private IFileReader _fileReader;
         [SetUp]
         public void Setup()
         {
             // Arrange
             _calculator = new Calculator();
+            _fileReader = new FileReader();
         }
 
         [TestCase(10, 20, ExpectedResult = 30)]
@@ -140,6 +143,16 @@ namespace ICT3101_Caculator.UnitTests
         public void UnknownFunctionB_WhenGivenTest3To4_ResultThrowArgumnetException(double num1, double num2)
         {
             Assert.Throws<ArgumentException>(() => _calculator.unknownFunctionB(num1, num2));
+        }
+
+        [TestCase(1, ExpectedResult = 4)]
+        [TestCase(2, ExpectedResult = 6)]
+        [TestCase(3, ExpectedResult = 8)]
+        [TestCase(4, ExpectedResult = 10)]
+
+        public double GenMagicNum_WhenGivenTxtFile_Result(double num1)
+        {
+            return _calculator.GenMagicNum(num1, _fileReader);
         }
     }
 }
