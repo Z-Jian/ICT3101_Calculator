@@ -13,7 +13,7 @@ Scenario: Dividing two numbers
 Scenario: Dividing zero by a number
 	Given I have a calculator
 	When I have entered 0 and 15 into the calculator and press divide
-	Then the division result should be 90
+	Then the division result should be 0
 	
 @Divisions
 Scenario: Dividing by zeros
