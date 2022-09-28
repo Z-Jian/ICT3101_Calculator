@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest
     defaults:
       run:
-        working-directory: ICT3101_Calculator/
+        working-directory: ./ICT3101_Calculator/
 
     steps:
       - uses: actions/checkout@v3
