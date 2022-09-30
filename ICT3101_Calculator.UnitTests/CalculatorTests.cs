@@ -145,6 +145,7 @@ namespace ICT3101_Caculator.UnitTests
             Assert.Throws<ArgumentException>(() => _calculator.unknownFunctionB(num1, num2));
         }
 
+        [TestCase(0, ExpectedResult = 2)]
         [TestCase(1, ExpectedResult = 4)]
         [TestCase(2, ExpectedResult = 6)]
         [TestCase(3, ExpectedResult = 8)]
