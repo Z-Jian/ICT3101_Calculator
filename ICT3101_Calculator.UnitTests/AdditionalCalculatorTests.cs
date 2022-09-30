@@ -19,12 +19,11 @@ namespace ICT3101_Calculator.UnitTests
 
         [TestCase(0, ExpectedResult = 84)]
         [TestCase(1, ExpectedResult = 84)]
-
         public double GenMagicNum_WhenGivenTxtFile_Result(double num1)
         {
             return GenMagicNum(num1, _mockFileReader.Object);
         }
-
+        //
         public double GenMagicNum(double input, IFileReader fileReader)
         {
             double result = 0;
